@@ -30,20 +30,30 @@ test('should handle startEditExpense', () => {
 });
 
 test('should handle startRemoveExpense', () => {
+    const confModal = true;
     wrapper.find('button').simulate('click');
+    expect(wrapper.state('confModal')).toBe(confModal);
+    // wrapper.find('ConfirmationModal').prop('confModal')(confModal);
+    // expect(history.push).toHaveBeenLastCalledWith('/');
+    // expect(startRemoveExpense).toHaveBeenLastCalledWith({
+    //     id: expenses[2].id
+    // });
+
+    
+});
+
+test('should handle confirmation modal state', () => {
+    const confModal = false;
+    wrapper.find('ConfirmationModal').prop('handleClearModal')(confModal);
+    expect(wrapper.state('confModal')).toBe(confModal);
+});
+
+test('should remove expense on confirmation button click', () => {
+    const confModal = undefined
+    wrapper.find('ConfirmationModal').prop('handleAcceptModal')(confModal);
+    expect(wrapper.state('confModal')).toBe(confModal);
     expect(history.push).toHaveBeenLastCalledWith('/');
     expect(startRemoveExpense).toHaveBeenLastCalledWith({
         id: expenses[2].id
     });
 });
-
-// test('should handle onSubmit', () => {
-//     const updates = { note: 'Add new note!' };
-//     const editExpense = jest.fn();
-//     const history = { push: jest.fn() };
-//     const wrapper = shallow(<EditExpensePage editExpense={editExpense} history={history} />);
-//     wrapper.find('ExpenseForm').prop('onSubmit')(expenses[1], updates);
-//     expect(history.push).toHaveBeenLastCalledWith('/');
-//     expect(editExpense).toHaveBeenLastCalledWith(expenses[1], updates);
-
-// });

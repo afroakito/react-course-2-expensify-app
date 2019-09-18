@@ -1,7 +1,7 @@
 import React from 'react';
 import Modal from 'react-modal';
 
-Modal.setAppElement('#app');
+Modal.setAppElement('body');
 
 const ConfirmationModal = (props) => (
     <Modal

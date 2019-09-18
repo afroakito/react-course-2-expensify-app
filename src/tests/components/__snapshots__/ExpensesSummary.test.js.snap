@@ -21,6 +21,14 @@ exports[`should correctly render ExpensesSummary with 1 expense 1`] = `
         $2.35
       </span>
     </h1>
+    <h2
+      className="page-header__title"
+    >
+      Hidden: 
+      <span>
+        NaN
+      </span>
+    </h2>
     <div
       className="page-header__actions"
     >
@@ -56,6 +64,14 @@ exports[`should correctly render ExpensesSummary with multiple expenses 1`] = `
         $26,876,899.35
       </span>
     </h1>
+    <h2
+      className="page-header__title"
+    >
+      Hidden: 
+      <span>
+        NaN
+      </span>
+    </h2>
     <div
       className="page-header__actions"
     >
