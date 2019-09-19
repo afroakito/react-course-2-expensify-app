@@ -20,3 +20,10 @@ test('should call startLogin(2) on button click', () => {
     wrapper.find('button').at(1).simulate('click');
     expect(startLoginWithFacebook).toHaveBeenCalled();
 });
+
+test('should call startLogin(3) on button click', () => {
+    const startLoginWithGithub = jest.fn();
+    const wrapper = shallow(<LoginPage startLoginWithGithub={startLoginWithGithub} />)
+    wrapper.find('button').at(2).simulate('click');
+    expect(startLoginWithGithub).toHaveBeenCalled();
+});

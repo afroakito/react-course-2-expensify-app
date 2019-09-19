@@ -25,6 +25,11 @@ exports[`should correctly render LoginPage 1`] = `
     >
       Login with Facebook
     </button>
+    <button
+      className="button github"
+    >
+      Login with Github
+    </button>
   </div>
 </div>
 `;
